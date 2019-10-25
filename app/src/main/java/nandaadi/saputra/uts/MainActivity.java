@@ -73,13 +73,13 @@ public class MainActivity extends AppCompatActivity {
             //pemberian if dan else untuk aturan pemberian harga
 
             if (total == 100000) {
-                edtHarga.setText("Harga : Kelas Ekonomi");
+                edtHarga.setText("Anda Memilih Kelas Ekonomi");
             } else if (total == 200000) {
-                edtHarga.setText("Harga : Kelas Bisnis");
+                edtHarga.setText("Anda Memilih Kelas Bisnis");
             } else if (total == 500000) {
-                edtHarga.setText("Harga : Kelas Eksekutif");
+                edtHarga.setText("Anda Memilih Kelas Eksekutif");
             } else if (total == 0){
-                edtHarga.setText("Harga : Tidak Menginput/ Salah Input");
+                edtHarga.setText("Maaf Anda Tidak Menginput atau Salah Input");
             }
             double uangkembalian = (uangbayar - total);
 
@@ -108,11 +108,6 @@ public class MainActivity extends AppCompatActivity {
 
             // memberikan action pada tombol keluar
         });
-        btnKeluar.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-
-                moveTaskToBack(true);
-            }
-        });
+        btnKeluar.setOnClickListener(view -> moveTaskToBack(true));
     }
 }
