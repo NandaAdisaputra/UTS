@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 double hargatiket = Double.parseDouble(harga);
                 double uangbayar = Double.parseDouble(bayar);
                 double total = (jumlahpesantiket * hargatiket);
-                btnTotal.setText("Total Belanja : " + total);
+                tvTotal.setText("Total Belanja : " + total);
 
                 //pemberian if dan else untuk aturan pemberian harga
 
