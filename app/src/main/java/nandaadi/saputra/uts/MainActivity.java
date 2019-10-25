@@ -52,67 +52,61 @@ public class MainActivity extends AppCompatActivity {
 
         //memberikan action pada tombol proses
 
-        btnTotal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String noktp = edtKtp.getText().toString().trim();
-                String nama = edtNama.getText().toString().trim();
-                String nohp = edtNohp.getText().toString().trim();
-                String asal = edtAsal.getText().toString().trim();
-                String tujuan = edtTujuan.getText().toString().trim();
-                String harga = edtHarga.getText().toString().trim();
-                String kembalian = tvUangkembalian.getText().toString().trim();
-                String bayar = edtBayar.getText().toString().trim();
-                String jumlahpesan = edtJumlahpesan.getText().toString().trim();
-                String totalharga = tvTotal.getText().toString().trim();
+        btnTotal.setOnClickListener(view -> {
+            String noktp = edtKtp.getText().toString().trim();
+            String nama = edtNama.getText().toString().trim();
+            String nohp = edtNohp.getText().toString().trim();
+            String asal = edtAsal.getText().toString().trim();
+            String tujuan = edtTujuan.getText().toString().trim();
+            String harga = edtHarga.getText().toString().trim();
+            String kembalian = tvUangkembalian.getText().toString().trim();
+            String bayar = edtBayar.getText().toString().trim();
+            String jumlahpesan = edtJumlahpesan.getText().toString().trim();
+            String totalharga = tvTotal.getText().toString().trim();
 
-                double jumlahpesantiket = Double.parseDouble(jumlahpesan);
-                double hargatiket = Double.parseDouble(harga);
-                double uangbayar = Double.parseDouble(bayar);
-                double total = (jumlahpesantiket * hargatiket);
-                tvTotal.setText("Total Belanja : " + total);
+            double jumlahpesantiket = Double.parseDouble(jumlahpesan);
+            double hargatiket = Double.parseDouble(harga);
+            double uangbayar = Double.parseDouble(bayar);
+            double total = (jumlahpesantiket * hargatiket);
+            tvTotal.setText("Total Belanja : " + total);
 
-                //pemberian if dan else untuk aturan pemberian harga
+            //pemberian if dan else untuk aturan pemberian harga
 
-                if (total >= 100000) {
-                    edtHarga.setText("Harga : Kelas Ekonomi");
-                } else if (total >= 200000) {
-                    edtHarga.setText("Harga : Kelas Bisnis");
-                } else if (total >= 500000) {
-                    edtHarga.setText("Harga : Kelas Eksekutif");
-                } else {
-                    edtHarga.setText("Tidak Menginput/ Salah Input");
-                }
-                double uangkembalian = (uangbayar - total);
-
-                if (uangbayar < total) {
-                    tvKeterangan.setText("Keterangan : uang bayar kurang Rp " + (-uangkembalian));
-                    tvUangkembalian.setText("Uang Kembali : Rp 0");
-                } else {
-                    tvKeterangan.setText("Keterangan : Tunggu Kembalian");
-                    tvUangkembalian.setText("Uang Kembali : " + uangkembalian);
-                }
-
-
-                //memberikan action pada tombol reset data
+            if (total == 100000) {
+                edtHarga.setText("Harga : Kelas Ekonomi");
+            } else if (total == 200000) {
+                edtHarga.setText("Harga : Kelas Bisnis");
+            } else if (total == 500000) {
+                edtHarga.setText("Harga : Kelas Eksekutif");
+            } else if (total == 0){
+                edtHarga.setText("Harga : Tidak Menginput/ Salah Input");
             }
-        });
-        btnHapus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                edtKtp.setText(" ");
-                edtNama.setText(" ");
-                tvTotal.setText(" Total Belanja : Rp 0");
-                edtHarga.setText(" ");
-                edtBayar.setText(" ");
+            double uangkembalian = (uangbayar - total);
+
+            if (uangbayar < total) {
+                tvKeterangan.setText("Keterangan : uang bayar kurang Rp " + (-uangkembalian));
                 tvUangkembalian.setText("Uang Kembali : Rp 0");
-                edtJumlahpesan.setText(" ");
-                tvKeterangan.setText("Keterangan : - ");
-
-                Toast.makeText(getApplicationContext(), "Data sudah direset", Toast.LENGTH_LONG).show();
-
-                // memberikan action pada tombol keluar
+            } else {
+                tvKeterangan.setText("Keterangan : Tunggu Kembalian");
+                tvUangkembalian.setText("Uang Kembali : " + uangkembalian);
             }
+
+
+            //memberikan action pada tombol reset data
+        });
+        btnHapus.setOnClickListener(view -> {
+            edtKtp.setText(" ");
+            edtNama.setText(" ");
+            tvTotal.setText(" Total Belanja : Rp 0");
+            edtHarga.setText(" ");
+            edtBayar.setText(" ");
+            tvUangkembalian.setText("Uang Kembali : Rp 0");
+            edtJumlahpesan.setText(" ");
+            tvKeterangan.setText("Keterangan : - ");
+
+            Toast.makeText(getApplicationContext(), "Data sudah direset", Toast.LENGTH_LONG).show();
+
+            // memberikan action pada tombol keluar
         });
         btnKeluar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
