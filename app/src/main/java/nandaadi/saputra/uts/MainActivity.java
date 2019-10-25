@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         //memberikan action pada tombol proses
 
         btnTotal.setOnClickListener(view -> {
+            Toast.makeText(this, "Kalkulasi Total Harga",
+                    Toast.LENGTH_LONG).show();
             String noktp = edtKtp.getText().toString().trim();
             String nama = edtNama.getText().toString().trim();
             String nohp = edtNohp.getText().toString().trim();
@@ -95,8 +97,13 @@ public class MainActivity extends AppCompatActivity {
             //memberikan action pada tombol reset data
         });
         btnHapus.setOnClickListener(view -> {
+            Toast.makeText(this, "Anda Berhasil Menghapus Data",
+                    Toast.LENGTH_LONG).show();
             edtKtp.setText(" ");
             edtNama.setText(" ");
+            edtNohp.setText(" ");
+            edtAsal.setText(" ");
+            edtTujuan.setText(" ");
             tvTotal.setText(" Total Belanja : Rp 0");
             edtHarga.setText(" ");
             edtBayar.setText(" ");
