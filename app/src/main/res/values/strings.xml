@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">UTSPRAKTIKUM</string>
+    <string name="no_ktp">No.KTP</string>
+    <string name="masukkan_no_ktp">Masukkan No.KTP</string>
+    <string name="nama">Nama</string>
+    <string name="masukkan_nama">Masukkan Nama</string>
+    <string name="no_telepon">No.Telepon</string>
+    <string name="masukkan_nomor_telepon">Masukkan Nomor Telepon</string>
+    <string name="dari">Dari</string>
+    <string name="masukkan_lokasi_awal">Masukkan Lokasi Awal</string>
+    <string name="tujuan">Tujuan</string>
+    <string name="masukkan_lokasi_tujuan">Masukkan Lokasi Tujuan</string>
+    <string name="harga">Harga</string>
+    <string name="masukkan_harga">Masukkan Harga</string>
+    <string name="jumlah_pesan">Jumlah Pesan</string>
+    <string name="masukkan_jumlah_pesan">Masukkan Jumlah Pesan</string>
+    <string name="total">Total</string>
+    <string name="total_harga">Total Harga</string>
+    <string name="uang_bayar">Uang Bayar</string>
+    <string name="masukkan_nominal_pembayaran">Masukkan Nominal Pembayaran</string>
+    <string name="uang_kembalian">Uang Kembalian</string>
+    <string name="keterangan">Keterangan</string>
+    <string name="keluar">Keluar</string>
+    <string name="hapus">Hapus</string>
+</resources>
